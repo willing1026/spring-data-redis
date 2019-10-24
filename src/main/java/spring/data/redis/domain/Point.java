@@ -5,11 +5,12 @@ import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
 @RedisHash("point")
-public class Point {
+public class Point implements Serializable {
     @Id
     private String id;
     private Long amount;
